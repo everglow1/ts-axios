@@ -17,11 +17,14 @@ app.use(webpackDevMiddleware(compiler, {
 }))
 const router = express.Router()
 
-// express框架利用路由 实现一个接口。
+// express框架利用路由 实现 接口。
 router.get('/simple/get', function(req, res) {
   res.json({
     msg: `hello world`
   })
+})
+router.get('/base/get', function(req, res) {
+  res.json(req.query)
 })
 
 app.use(router)

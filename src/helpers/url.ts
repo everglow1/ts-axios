@@ -38,7 +38,8 @@ export function bulidURL(url: string, params?: any): string {
 			} else if(isObject(val)) {
 				val = JSON.stringify(val)
 			}
-			parts.push(`${encode(key)} = ${encode(val)}`)
+			parts.push(`${encode(key)}=${encode(val)}`)
+			// parts.push(`${key} = ${val}`)
 		})
 	})
 

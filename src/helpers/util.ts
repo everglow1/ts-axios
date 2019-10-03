@@ -2,11 +2,11 @@
 const isString = Object.prototype.toString
 
 // val is Date 类型保护
-export function isDate(val: any): val is Date{
+export function isDate(val: any): val is Date {
 	return isString.call(val) === '[object Date]'
 }
 
-export function isObject(val: object): val is object {
+export function isObject(val: object): val is Object {
 	// return isString.call(val) === '[object object]'
 	return val !== null && typeof val === 'object'
 }
