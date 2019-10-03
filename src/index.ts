@@ -1,8 +1,21 @@
 import { AxiosRequestConfig } from './types';
 import xhr from './xhr';
+import { bulidURL } from './helpers/url'
 
 function axios(config: AxiosRequestConfig) {
+	// 在发送请求之前处理config配置
+	processConfig(config)
 	xhr(config)
 }
 
+// 对config参数进行处理
+function processConfig(config: AxiosRequestConfig): void {
+	config.url = transformURL(config)
+}
+
+// 对url进行处理
+function transformURL(config: AxiosRequestConfig): string {
+	const { url, params } = config
+	return bulidURL(url, params)
+}
 export default axios
