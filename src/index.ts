@@ -1,11 +1,12 @@
-import { AxiosRequestConfig } from './types';
+import { AxiosRequestConfig, AxiosPromise } from './types';
 import xhr from './xhr';
 import { bulidURL, transformRequest, processHeaders} from './helpers/index'
 
-function axios(config: AxiosRequestConfig) {
+function axios(config: AxiosRequestConfig): AxiosPromise {
 	// 在发送请求之前处理config配置
 	processConfig(config)
-	xhr(config)
+	console.log('data', config.data)
+	return xhr(config)
 }
 
 // 对config参数进行处理

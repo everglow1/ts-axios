@@ -8,4 +8,19 @@ export interface AxiosRequestConfig {
 	data?: any   // post请求使用
 	params?: any
 	headers?: any
+	responseType?: XMLHttpRequestResponseType
+}
+
+export interface AxiosResponse {
+	data: any
+  status: number
+  statusText: string
+  headers: any
+  config: AxiosRequestConfig
+  request: any
+}
+
+// 继承promise范型接口
+export interface AxiosPromise extends Promise<AxiosResponse> {
+
 }

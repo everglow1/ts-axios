@@ -78,11 +78,14 @@ axios({
 
 axios({
   method: 'post',
-  url: '/base/post',
+	url: '/base/post',
+	responseType: 'json',
   data: {
     a: 1,
     b: 2
   }
+}).then((res) => {
+	console.log('res', res)
 })
 
 axios({
