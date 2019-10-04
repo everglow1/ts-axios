@@ -7,4 +7,5 @@ export interface AxiosRequestConfig {
 	method?: Method
 	data?: any   // post请求使用
 	params?: any
+	headers?: any
 }
