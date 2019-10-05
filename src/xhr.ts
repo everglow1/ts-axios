@@ -18,7 +18,6 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
 			}
 			const responseHeader = request.getAllResponseHeaders()
 			const responseData = responseType !== 'text'? request.response : request.responseText
-			console.log('data5', request)
 			const response: AxiosResponse = {
 				data: responseData,
 				status: request.status,
@@ -36,10 +35,6 @@ export default function xhr(config: AxiosRequestConfig): AxiosPromise {
 				request.setRequestHeader(name, headers[name])
 			}
 		})
-		console.log('data1', data)
 		request.send(data)
 	})
-
-	
-	
 }
